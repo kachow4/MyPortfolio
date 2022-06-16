@@ -1,0 +1,263 @@
+/* psuedo class */
+:root {
+    --light-pink: #F299A0;
+    --medium-pink: #F27999;
+    --dark-pink: #DC577C;
+    --light-green: #D0D9CC;
+    --dark-green: #8FBF9B;   
+    --font-size: 1.3rem;
+    --barlow: "Barlow", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    /* removes default margins and padding */
+    padding: 0;
+    margin: 0;
+    font-family: var(--barlow);
+}
+
+h1, h2, h3 {
+    /* margins collapse when the encounter each other */
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* background color divs */
+.section-dkgreen {
+    background-color: var(--dark-green);
+}
+
+.section-ltpink {
+    background-color: var(--light-pink);
+}
+
+.section-dkpink {
+    background-color: var(--dark-pink);
+}
+
+/* navbar */
+nav {
+    padding: 1rem;
+}
+
+nav ul {
+    /* removes bullets */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    /* need to set because by default, a is inline. We want to whole box to be clickable */
+    display: block;
+}
+
+nav a:hover {
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+/* intro styles */
+#intro {
+    padding: 4rem 1rem 10rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1.25rem;
+    /* line height is a proportion, so don't add a unit to the end */
+    line-height: 1.5;
+}
+
+#intro .name span {
+    font-size: 4rem;
+    color: var(--dark-green);
+    display: block;
+}
+
+#intro h2 {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+#projects {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* color: #fff; */
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5)
+}
+
+#projects h3 {
+    /* color: var(--light-pink); */
+    /* color: var(--medium-pi); */
+    /* color: #fff; */
+    color: var(--dark-green);
+    font-size: 1.5rem;
+}
+
+#projects h4 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.ltgreen-box {
+    background-color: var(--light-green);
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+#projects img {
+    margin: 2rem 0 4rem 0;
+    border-radius: 25px;
+    border-left: 1px solid var(--light-green);
+    border-top: 1px solid var(--light-green);
+    padding: 1rem;
+}
+
+#contact {
+    color: #fff;
+    text-align: center;
+    padding: 3rem;
+}
+
+/* contact styles */
+#contact p {
+    padding: 0rem 3rem;
+}
+
+#contact .social-media {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+#contact .social-media li {
+    width: 50px;
+    height: 30px;
+}
+
+#contact .social-media a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* for every class that starts with fa- */
+#contact [class*="fa-"] {
+    font-size: 150%;
+}
+
+#contact [class*="fa-"]:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition-duration: .25s;
+}
+
+/* footer */
+footer {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+@media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+
+    #projects img {
+        /* have the img take up columns 1-6 */
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    .text {
+        order: 2;
+        text-align: right;
+        grid-column: 5/11;
+        grid-row: 1/2;
+    }
+
+    #projects ul {
+        justify-content: flex-end;
+    }
+
+    #projects .reverse .text {
+        grid-column: 1/7;
+        text-align: left;
+    }
+
+    #projects .reverse img {
+        grid-column: 6/11
+    }
+
+    #projects .reverse ul {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    };
+
+}
