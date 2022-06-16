@@ -80,6 +80,7 @@ nav a {
 nav a:hover {
     color: var(--dark-green);
     cursor: pointer;
+    transition-duration: .3s;
 }
 
 /* intro styles */
@@ -119,9 +120,6 @@ nav a:hover {
 }
 
 #projects h3 {
-    /* color: var(--light-pink); */
-    /* color: var(--medium-pi); */
-    /* color: #fff; */
     color: var(--dark-green);
     font-size: 1.5rem;
 }
@@ -129,6 +127,7 @@ nav a:hover {
 #projects h4 {
     font-size: 1rem;
     margin: 0;
+    padding-bottom: 0.5rem;
 }
 
 .ltgreen-box {
@@ -142,12 +141,30 @@ nav a:hover {
 #projects ul {
     list-style-type: none;
     padding: 0;
+    padding-bottom: 1rem;
     margin: 0;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     gap: 1rem;
     font-size: 1rem;
+}
+
+#projects a {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--dark-green);
+    color: #fff;
+}
+
+#projects a:hover {
+    transition-duration: .3s;
+    background-color: var(--light-green);
+}
+
+#projects span {
+    padding: 5px;
 }
 
 #projects img {
@@ -213,20 +230,20 @@ footer {
 @media (min-width: 550px) {
     article {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(20, 1fr);
         gap: 1rem;
     }
 
     #projects img {
         /* have the img take up columns 1-6 */
-        grid-column: 1/6;
+        grid-column: 1/12;
         grid-row: 1/2;
     }
 
     .text {
         order: 2;
         text-align: right;
-        grid-column: 5/11;
+        grid-column: 10/21;
         grid-row: 1/2;
     }
 
@@ -235,12 +252,12 @@ footer {
     }
 
     #projects .reverse .text {
-        grid-column: 1/7;
+        grid-column: 1/11;
         text-align: left;
     }
 
     #projects .reverse img {
-        grid-column: 6/11
+        grid-column: 10/21
     }
 
     #projects .reverse ul {

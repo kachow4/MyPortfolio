@@ -1,0 +1,219 @@
+/* psuedo class */
+:root {
+    --light-pink: #F299A0;
+    --medium-pink: #F27999;
+    --dark-pink: #DC577C;
+    --light-green: #D0D9CC;
+    --dark-green: #8FBF9B;   
+    --font-size: 1.3rem;
+    --barlow: "Barlow", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    /* removes default margins and padding */
+    padding: 0;
+    margin: 0;
+    font-family: var(--barlow);
+}
+
+h1, h2, h3 {
+    /* margins collapse when the encounter each other */
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* background color divs */
+.section-dkgreen {
+    background-color: var(--dark-green);
+}
+
+.section-ltgreen {
+    background-color: var(--light-green);
+}
+
+.section-dkpink {
+    background-color: var(--dark-pink);
+}
+
+/* navbar */
+nav {
+    padding: 1rem;
+}
+
+nav ul {
+    /* removes bullets */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    /* need to set because by default, a is inline. We want to whole box to be clickable */
+    display: block;
+}
+
+nav a:hover {
+    color: var(--dark-green);
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+#profile {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#profile h1 {
+    color: var(--dark-green);
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.ltgreen-box {
+    background-color: var(--light-green);
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#profile ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    align-items: center;
+}
+
+#profile img {
+    border-radius: 15%;
+    padding: 1rem;
+}
+
+#connect {
+    padding: 4rem 1rem;
+    color: #fff;
+}
+
+#connect h3{
+    text-align: center;
+    font-size: 2rem;
+}
+
+#connect ul {
+    list-style-type: none;
+    padding: 1.5rem 0 0 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+#connect ul li {
+    width: 50px;
+    height: 30px;
+}
+
+#connect li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* for every class that starts with fa- */
+#connect [class*="fa-"] {
+    font-size: 150%;
+}
+
+#connect [class*="fa-"]:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+    transition-duration: .25s;
+}
+
+#fun {
+    padding: 4rem 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+#fun ul li {
+    line-height: 1.5;
+}
+
+/* footer */
+footer {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+@media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+
+    #profile img {
+        /* have the img take up columns 1-6 */
+        grid-column: 1/5;
+        grid-row: 1/2;
+    }
+
+    .text {
+        order: 2;
+        text-align: right;
+        grid-column: 4/11;
+        grid-row: 1/2;
+    }
+
+    #profile ul {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    };
+
+}
